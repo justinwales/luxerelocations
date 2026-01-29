@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Relocations LA | Your Personal Moving Concierge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --midnight: #0D1117;
+            --charcoal: #161B22;
+            --slate: #21262D;
+            --silver: #8B949E;
+            --pearl: #F0F6FC;
+            --white: #FFFFFF;
+            --cream: #FAF8F5;
+            --gold: #C9A962;
+            --gold-light: #D4B978;
+            --gold-dark: #A68B4B;
+            --sage: #87A878;
+            --warm: #E8E4DF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(201, 169, 98, 0.3);
+        }
+
+        .logo-icon svg { width: 24px; height: 24px; color: white; }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        .logo-text span { color: var(--gold-dark); }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--charcoal);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--gold-dark); }
+
+        .nav-cta {
+            background: var(--charcoal);
+            color: white;
+            padding: 0.875rem 1.75rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(201, 169, 98, 0.15);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            color: var(--gold-dark);
+            margin-bottom: 1.5rem;
+            width: fit-content;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            color: var(--charcoal);
+        }
+
+        .hero h1 span {
+            color: var(--gold-dark);
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--silver);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1rem;
+            color: var(--charcoal);
+        }
+
+        .hero-feature svg {
+            width: 24px;
+            height: 24px;
+            color: var(--sage);
+            flex-shrink: 0;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'DM Sans', sans-serif;
+            border: none;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--charcoal);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(201, 169, 98, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--charcoal);
+            color: var(--charcoal);
+        }
+
+        .btn-secondary:hover {
+            background: var(--charcoal);
+            color: white;
+        }
+
+        .hero-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+        }
+
+        .hero-stat {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--gold-light);
+        }
+
+        .stat-item p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--silver);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            background: var(--charcoal);
+            color: white;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .problem-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .problem-content h2 span {
+            color: var(--gold-light);
+        }
+
+        .problem-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .problem-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .problem-list svg {
+            width: 24px;
+            height: 24px;
+            color: #F87171;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .problem-image {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+        }
+
+        .problem-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            background: white;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .solution-image {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.1);
+        }
+
+        .solution-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+        }
+
+        .solution-badge {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .solution-badge h4 {
+            font-size: 1rem;
+            color: var(--charcoal);
+            margin-bottom: 0.25rem;
+        }
+
+        .solution-badge p {
+            font-size: 0.85rem;
+            color: var(--silver);
+        }
+
+        .solution-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .solution-content h2 span {
+            color: var(--gold-dark);
+            font-style: italic;
+        }
+
+        .solution-content > p {
+            font-size: 1.1rem;
+            color: var(--silver);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .solution-features {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .solution-feature {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .solution-feature-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(201, 169, 98, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .solution-feature-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--gold-dark);
+        }
+
+        .solution-feature h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            color: var(--charcoal);
+        }
+
+        .solution-feature p {
+            font-size: 0.95rem;
+            color: var(--silver);
+        }
+
+        /* Process Section */
+        .process-section {
+            background: var(--cream);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .process-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .process-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .process-card::after {
+            content: '→';
+            position: absolute;
+            top: 50%;
+            right: -1.25rem;
+            transform: translateY(-50%);
+            color: var(--gold);
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .process-card:last-child::after {
+            display: none;
+        }
+
+        .process-number {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 20px rgba(201, 169, 98, 0.3);
+        }
+
+        .process-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--charcoal);
+        }
+
+        .process-card p {
+            font-size: 0.95rem;
+            color: var(--silver);
+            line-height: 1.6;
+        }
+
+        /* Founder Section */
+        .founder-section {
+            background: white;
+        }
+
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .founder-image {
+            position: relative;
+        }
+
+        .founder-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.1);
+        }
+
+        .founder-image::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: 15px;
+            bottom: 15px;
+            border: 2px solid var(--gold);
+            border-radius: 16px;
+            z-index: -1;
+        }
+
+        .founder-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--charcoal);
+            color: white;
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .founder-badge h4 {
+            font-size: 1.75rem;
+            color: var(--gold-light);
+        }
+
+        .founder-badge p {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .founder-content h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .founder-content h2 span {
+            color: var(--gold-dark);
+        }
+
+        .founder-content > p {
+            font-size: 1.1rem;
+            color: var(--silver);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .founder-quote {
+            background: var(--cream);
+            border-left: 4px solid var(--gold);
+            padding: 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin: 2rem 0;
+        }
+
+        .founder-quote p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--charcoal);
+            margin-bottom: 0.75rem;
+        }
+
+        .founder-quote cite {
+            font-size: 0.9rem;
+            color: var(--silver);
+            font-style: normal;
+        }
+
+        /* Calculator Section */
+        .calculator-section {
+            background: var(--charcoal);
+            color: white;
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .calculator-content h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .calculator-content h2 span {
+            color: var(--gold-light);
+        }
+
+        .calculator-content > p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .calculator-info {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .calculator-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            color: var(--gold-light);
+        }
+
+        .calculator-info p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+        }
+
+        .price-tiers {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .price-tier {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .price-tier.recommended {
+            border-color: var(--gold);
+            background: rgba(201, 169, 98, 0.1);
+        }
+
+        .price-tier-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 0.5rem;
+        }
+
+        .price-tier.recommended .price-tier-label {
+            color: var(--gold-light);
+        }
+
+        .price-tier-rate {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        /* Calculator Card */
+        .calculator-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            color: var(--charcoal);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+        }
+
+        .calculator-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .calculator-card > p {
+            text-align: center;
+            color: var(--silver);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .room-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .room-tab {
+            padding: 0.5rem 1rem;
+            background: var(--cream);
+            border: none;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'DM Sans', sans-serif;
+            color: var(--charcoal);
+        }
+
+        .room-tab:hover { background: var(--warm); }
+        .room-tab.active { background: var(--charcoal); color: white; }
+
+        .inventory-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            max-height: 280px;
+            overflow-y: auto;
+        }
+
+        .inventory-item {
+            background: var(--cream);
+            border-radius: 10px;
+            padding: 0.875rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s;
+        }
+
+        .inventory-item.has-items {
+            background: rgba(201, 169, 98, 0.15);
+            border: 1px solid var(--gold);
+        }
+
+        .item-info { display: flex; flex-direction: column; }
+        .item-name { font-weight: 500; font-size: 0.9rem; }
+        .item-size { font-size: 0.75rem; color: var(--silver); }
+
+        .item-counter { display: flex; align-items: center; gap: 0.4rem; }
+
+        .counter-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            border: 1px solid var(--warm);
+            background: white;
+            cursor: pointer;
+            font-size: 1rem;
+            color: var(--charcoal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .counter-btn:hover { border-color: var(--gold); color: var(--gold-dark); }
+        .counter-value { width: 30px; text-align: center; font-weight: 600; }
+
+        .quote-result {
+            background: var(--charcoal);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            color: white;
+        }
+
+        .quote-result-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.7;
+            margin-bottom: 0.5rem;
+        }
+
+        .quote-result-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--gold-light);
+            margin-bottom: 0.25rem;
+        }
+
+        .quote-result-cuft {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .quote-cta {
+            margin-top: 1.5rem;
+        }
+
+        .quote-cta .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section .btn {
+            background: white;
+            color: var(--charcoal);
+        }
+
+        .cta-section .btn:hover {
+            background: var(--charcoal);
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--charcoal);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
+            margin: 1.5rem 0;
+            line-height: 1.7;
+        }
+
+        .footer-title {
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 0.75rem; }
+        .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--gold-light); }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .footer-legal a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            margin-left: 1.5rem;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-overlay.active { display: flex; }
+
+        .modal {
+            background: white;
+            border-radius: 16px;
+            max-width: 480px;
+            width: 100%;
+            padding: 2.5rem;
+            position: relative;
+            color: var(--charcoal);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--silver);
+        }
+
+        .modal h3 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-subtitle {
+            color: var(--silver);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid var(--warm);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'DM Sans', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .consent-text {
+            font-size: 0.8rem;
+            color: var(--silver);
+            margin-top: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero { grid-template-columns: 1fr; }
+            .hero-content { max-width: 100%; padding: 3rem 2rem; }
+            .hero-image { height: 400px; }
+            .problem-grid, .solution-grid, .founder-grid, .calculator-grid { grid-template-columns: 1fr; }
+            .process-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-card::after { display: none; }
+            .footer-container { grid-template-columns: 1fr 1fr; }
+            .nav-links { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-cta { flex-direction: column; }
+            .hero-stat { gap: 1.5rem; }
+            .process-grid { grid-template-columns: 1fr; }
+            .price-tiers { grid-template-columns: 1fr; }
+            .inventory-grid { grid-template-columns: 1fr; }
+            .footer-container { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+            .form-row { grid-template-columns: 1fr; }
+            .founder-image::before { display: none; }
+            .founder-badge { position: static; margin-top: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                </div>
+                <div class="logo-text">Luxe<span>Relocations</span></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#calculator">Get a Quote</a></li>
+            </ul>
+            <button class="nav-cta" onclick="openModal()">Free Consultation</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">✨ Los Angeles Moving Concierge</div>
+            <h1>Moving Should Feel Like <span>Checking Into a Hotel</span></h1>
+            <p class="hero-subtitle">Your personal moving concierge handles everything—negotiating rates, coordinating schedules, and solving problems—so you can focus on your new beginning.</p>
+            
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                    <span>We negotiate the best rates on your behalf</span>
+                </div>
+                <div class="hero-feature">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                    <span>One point of contact for your entire move</span>
+                </div>
+                <div class="hero-feature">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                    <span>We're there on moving day to handle any issues</span>
+                </div>
+            </div>
+
+            <div class="hero-cta">
+                <a href="#calculator" class="btn btn-primary">Get Your Free Quote →</a>
+                <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Beautiful modern home interior">
+            <div class="hero-image-overlay">
+                <div class="hero-stat">
+                    <div class="stat-item">
+                        <h3>20+</h3>
+                        <p>Years Industry Experience</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>$2,400</h3>
+                        <p>Avg. Client Savings</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="problem-grid">
+                <div class="problem-content">
+                    <h2>Moving Shouldn't Be <span>This Stressful</span></h2>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 1.1rem;">We've all heard the horror stories. We've lived them. That's exactly why Luxe Relocations exists.</p>
+                    
+                    <ul class="problem-list">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                            <span><strong>Hidden fees</strong> that double your quote on moving day</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                            <span><strong>Damaged belongings</strong> with no accountability</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                            <span><strong>No-show movers</strong> on your most important day</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                            <span><strong>Hours on hold</strong> trying to resolve issues</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                            <span><strong>The anxiety</strong> of not knowing who to trust</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="problem-image">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80" alt="Moving boxes">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section" id="services">
+        <div class="container">
+            <div class="solution-grid">
+                <div class="solution-image">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80" alt="Professional concierge">
+                    <div class="solution-badge">
+                        <h4>Your Dedicated Concierge</h4>
+                        <p>One person, start to finish</p>
+                    </div>
+                </div>
+                <div class="solution-content">
+                    <p class="section-label">The Luxe Difference</p>
+                    <h2>A Personal Advocate <span>In Your Corner</span></h2>
+                    <p>Think of us as your moving department. We handle the calls, the negotiations, the scheduling headaches—everything. You just tell us when and where, and we make it happen.</p>
+
+                    <div class="solution-features">
+                        <div class="solution-feature">
+                            <div class="solution-feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            </div>
+                            <div>
+                                <h4>Rate Negotiation</h4>
+                                <p>We know what moves should cost. We get you the right price—no surprises.</p>
+                            </div>
+                        </div>
+                        <div class="solution-feature">
+                            <div class="solution-feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            </div>
+                            <div>
+                                <h4>Complete Coordination</h4>
+                                <p>Scheduling, confirmations, logistics—we manage every detail.</p>
+                            </div>
+                        </div>
+                        <div class="solution-feature">
+                            <div class="solution-feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div>
+                                <h4>Moving Day Support</h4>
+                                <p>We're on call to solve problems in real-time, so you don't have to.</p>
+                            </div>
+                        </div>
+                        <div class="solution-feature">
+                            <div class="solution-feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            </div>
+                            <div>
+                                <h4>Post-Move Resolution</h4>
+                                <p>Missing items? Damage? We advocate for you until it's resolved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">How It Works</p>
+                <h2 class="section-title">Four Simple Steps to a Stress-Free Move</h2>
+                <p class="section-subtitle">We've refined the process over two decades. Here's how your journey unfolds.</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-number">1</div>
+                    <h3>Free Consultation</h3>
+                    <p>Tell us about your move. We'll discuss your timeline, special items, and any concerns. No pressure, just helpful advice.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">2</div>
+                    <h3>We Find Your Match</h3>
+                    <p>We vet movers, negotiate rates, and present you with options that fit your budget and needs. You choose.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">3</div>
+                    <h3>We Handle Everything</h3>
+                    <p>From booking to confirmations to last-minute changes—your concierge manages all the details.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">4</div>
+                    <h3>Move Day & Beyond</h3>
+                    <p>We're available on moving day and after. Any issues? We step in and handle them for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="founder-section" id="about">
+        <div class="container">
+            <div class="founder-grid">
+                <div class="founder-image">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&q=80" alt="Moving industry professional">
+                    <div class="founder-badge">
+                        <h4>20+</h4>
+                        <p>Years in Moving</p>
+                    </div>
+                </div>
+                <div class="founder-content">
+                    <p class="section-label">Our Story</p>
+                    <h2>Built by a <span>Moving Industry Insider</span></h2>
+                    <p>Luxe Relocations was founded by someone who spent over two decades running moving companies. We've seen every trick, every shortcut, every way things can go wrong—and every way to prevent it.</p>
+                    <p>That insider knowledge is now working for you, not against you. We know exactly what a move should cost, which companies deliver on their promises, and how to resolve problems when they arise.</p>
+                    
+                    <div class="founder-quote">
+                        <p>"I started this because I was tired of seeing good people get taken advantage of. Moving is emotional. It's stressful. People deserve someone in their corner who actually knows this industry inside and out."</p>
+                        <cite>— Founder, Luxe Relocations</cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section" id="calculator">
+        <div class="container">
+            <div class="calculator-grid">
+                <div class="calculator-content">
+                    <h2>Get a <span>Quick Estimate</span></h2>
+                    <p>Build your inventory and see estimated costs instantly. This helps us prepare an accurate quote for your consultation.</p>
+                    
+                    <div class="calculator-info">
+                        <h4>How Moving Costs Work</h4>
+                        <p>Long-distance moves are typically priced by cubic foot—how much space your belongings take up on the truck. Rates generally range from $4 to $8 per cubic foot depending on distance, season, and service level. Our job is to get you the best rate possible.</p>
+                    </div>
+
+                    <div class="price-tiers">
+                        <div class="price-tier">
+                            <div class="price-tier-label">Budget</div>
+                            <div class="price-tier-rate">$4.00/cu ft</div>
+                        </div>
+                        <div class="price-tier recommended">
+                            <div class="price-tier-label">Typical</div>
+                            <div class="price-tier-rate">$5.75/cu ft</div>
+                        </div>
+                        <div class="price-tier">
+                            <div class="price-tier-label">Premium</div>
+                            <div class="price-tier-rate">$8.00/cu ft</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator-card">
+                    <h3>Build Your Inventory</h3>
+                    <p>Add items to estimate your move size</p>
+
+                    <div class="room-tabs">
+                        <button class="room-tab active" data-room="living">Living</button>
+                        <button class="room-tab" data-room="bedroom">Bedroom</button>
+                        <button class="room-tab" data-room="kitchen">Kitchen</button>
+                        <button class="room-tab" data-room="office">Office</button>
+                    </div>
+
+                    <!-- Living Room -->
+                    <div class="inventory-grid" data-room="living">
+                        <div class="inventory-item" data-cuft="50"><div class="item-info"><span class="item-name">Sofa (3-seat)</span><span class="item-size">50 cu ft</span></div><div class="item-counter"><button class="counter-btn" onclick="updateItem(this,-1)">−</button><span class="counter-value">0</span><button class="counter-btn" onclick="updateItem(this,1)">+</button></div></div>
+                        <div class="inventory-item" data-cuft="35"><div class="item-info"><span class="item-name">Loveseat</span><span class="item-size">35 cu ft</span></div><div class="item-counter"><button class="counter-btn" onclick="updateItem(this,-1)">−</button><span class="counter-value">0</span><button class="counter-btn" onclick="updateItem(this,1)">+</button></div></div>
+                        <div class="inventory-item" data-cuft="20"><div class="item-info"><span class="item-name">Armchair</span><span class="item-size">20 cu ft</span></div><div class="item-counter"><button class="counter-btn" onclick="updateItem(this,-1)">−</button><span class="counter-value">0</span><button class="counter-btn" onclick="updateItem(this,1)">+</button></div></div>
+                        <div class="inventory-item" data-cuft="10"><div class="item-info"><span class="item-name">Coffee Table</span><span class="item-size">10 cu ft</span></div><div class="item-counter"><button class="counter-btn" onclick="updateItem(this,-1)">−</button><span class="counter-value">0</span><button class="counter-btn" onclick="updateItem(this,1)">+</button></div></div>
+                        <div class="inventory-item" data-cuft="15"><div class="item-info"><span class="item-name">TV (large)</span><span class="item-size">15 cu ft</span></div><div class="item-counter"><button class="counter-btn" onclick="updateItem(this,-1)">−</button><span class="counter-value">0</span><button class="counter-btn" onclick="updateItem(this,1)">+</button></div></div>
+                        <div class="inventory-item" data-cuft="25"><div class="item-info"><span class="item-name">Bookshelf</span><span class="item-size">25 cu ft</span></div><div class="item-counter"><button class="counter-btn" onclick="updateItem(this,-1)">−</button><span class="counter-value">0</span><button class="counter-btn" onclick="updateItem(this,1)">+</button></div></div>
+                    </div>
+
+                    <!-- Bedroom -->
+                    <div class="inventory-grid" data-room="bedroom" style="display:none;">
+                        <div class="inventory-item" data-cuft="70"><div class="item-info"><span class="item-name">King Bed</span><span class="item-size">70 cu ft</span></div><div class="item-counter"><button class="counter-btn" onclick="updateItem(this,-1)">−</button><span class="counter-value">0</span><button class="counter-btn" onclick="updateItem(this,1)">+</button></div></div>
+                        <div class="inventory-item" data-cuft="60"><div class="item-info"><span class="item-name">Queen Bed</span><span class="item-size">60 cu ft</span></div><div class="item-counter"><button class="counter-btn" onclick="updateItem(this,-1)">−</button><span class="counter-value">0</span><button class="counter-btn" onclick="updateItem(this,1)">+</button></div></div>
+                        <div class="inventory-item" data-cuft="30"><div class="item-info"><span class="item-name">Dresser</span><span class="item-size">30 cu ft</span></div><div class="item-counter"><button class="counter-btn" onclick="updateItem(this,-1)">−</button><span class="counter-value">0</span><button class="counter-btn" onclick="updateItem(this,1)">+</button></div></div>
+                        <div class="inventory-item" data-cuft="8"><div class="item-info"><span class="item-name">Nightstand</span><span class="item-size">8 cu ft</span></div><div class="item-counter"><button class="counter-btn" onclick="updateItem(this,-1)">−</button><span class="counter-value">0</span><button class="counter-btn" onclick="updateItem(this,1)">+</button></div></div>
+                        <div class="inventory-item" data-cuft="50"><div class="item-info"><span class="item-name">Wardrobe</span><span class="item-size">50 cu ft</span></div><div class="item-counter"><button class="counter-btn" onclick="updateItem(this,-1)">−</button><span class="counter-value">0</span><button class="counter-btn" onclick="updateItem(this,1)">+</button></div></div>
+                        <div class="inventory-item" data-cuft="3"><div class="item-info"><span class="item-name">Box (clothes)</span><span class="item-size">3 cu ft</span></div><div class="item-counter"><button class="counter-btn" onclick="updateItem(this,-1)">−</button><span class="counter-value">0</span><button class="counter-btn" onclick="updateItem(this,1)">+</button></div></div>
+                    </div>
+
+                    <!-- Kitchen -->
+                    <div class="inventory-grid" data-room="kitchen" style="display:none;">
+                        <div class="inventory-item" data-cuft="50"><div class="item-info"><span class="item-name">Refrigerator</span><span class="item-size">50 cu ft</span></div><div class="item-counter"><button class="counter-btn" onclick="updateItem(this,-1)">−</button><span class="counter-value">0</span><button class="counter-btn" onclick="updateItem(this,1)">+</button></div></div>
+                        <div class="inventory-item" data-cuft="20"><div class="item-info"><span class="item-name">Kitchen Table</span><span class="item-size">20 cu ft</span></div><div class="item-counter"><button class="counter-btn" onclick="updateItem(this,-1)">−</button><span class="counter-value">0</span><button class="counter-btn" onclick="updateItem(this,1)">+</button></div></div>
+                        <div class="inventory-item" data-cuft="5"><div class="item-info"><span class="item-name">Chair</span><span class="item-size">5 cu ft</span></div><div class="item-counter"><button class="counter-btn" onclick="updateItem(this,-1)">−</button><span class="counter-value">0</span><button class="counter-btn" onclick="updateItem(this,1)">+</button></div></div>
+                        <div class="inventory-item" data-cuft="3"><div class="item-info"><span class="item-name">Box (dishes)</span><span class="item-size">3 cu ft</span></div><div class="item-counter"><button class="counter-btn" onclick="updateItem(this,-1)">−</button><span class="counter-value">0</span><button class="counter-btn" onclick="updateItem(this,1)">+</button></div></div>
+                    </div>
+
+                    <!-- Office -->
+                    <div class="inventory-grid" data-room="office" style="display:none;">
+                        <div class="inventory-item" data-cuft="25"><div class="item-info"><span class="item-name">Desk</span><span class="item-size">25 cu ft</span></div><div class="item-counter"><button class="counter-btn" onclick="updateItem(this,-1)">−</button><span class="counter-value">0</span><button class="counter-btn" onclick="updateItem(this,1)">+</button></div></div>
+                        <div class="inventory-item" data-cuft="10"><div class="item-info"><span class="item-name">Office Chair</span><span class="item-size">10 cu ft</span></div><div class="item-counter"><button class="counter-btn" onclick="updateItem(this,-1)">−</button><span class="counter-value">0</span><button class="counter-btn" onclick="updateItem(this,1)">+</button></div></div>
+                        <div class="inventory-item" data-cuft="15"><div class="item-info"><span class="item-name">File Cabinet</span><span class="item-size">15 cu ft</span></div><div class="item-counter"><button class="counter-btn" onclick="updateItem(this,-1)">−</button><span class="counter-value">0</span><button class="counter-btn" onclick="updateItem(this,1)">+</button></div></div>
+                        <div class="inventory-item" data-cuft="25"><div class="item-info"><span class="item-name">Bookshelf</span><span class="item-size">25 cu ft</span></div><div class="item-counter"><button class="counter-btn" onclick="updateItem(this,-1)">−</button><span class="counter-value">0</span><button class="counter-btn" onclick="updateItem(this,1)">+</button></div></div>
+                    </div>
+
+                    <div class="quote-result">
+                        <div class="quote-result-label">Estimated Range</div>
+                        <div class="quote-result-value" id="quoteValue">$0 – $0</div>
+                        <div class="quote-result-cuft"><span id="totalCuFt">0</span> cubic feet</div>
+                    </div>
+
+                    <div class="quote-cta">
+                        <button class="btn btn-primary" onclick="openModal()">Get Your Free Consultation →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Take the Stress Out of Moving?</h2>
+            <p>Book a free consultation with your personal moving concierge. No obligations, no pressure—just expert advice and a clear plan forward.</p>
+            <button class="btn" onclick="openModal()">Schedule Your Free Consultation</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9 22 9 12 15 12 15 22"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">Luxe<span>Relocations</span></div>
+                </div>
+                <p>Your personal moving concierge in Los Angeles. We negotiate rates, coordinate logistics, and solve problems—so you don't have to.</p>
+            </div>
+            <div>
+                <h4 class="footer-title">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Local Moves</a></li>
+                    <li><a href="#">Long Distance</a></li>
+                    <li><a href="#">Corporate Relocation</a></li>
+                    <li><a href="#">Senior Moving</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Moving Checklist</a></li>
+                    <li><a href="#">Packing Tips</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="#">hello@luxerelocations.com</a></li>
+                    <li><a href="#">Los Angeles, CA</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Luxe Relocations. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="consultModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <h3>Free Consultation</h3>
+            <p class="modal-subtitle">Tell us about your move and we'll reach out within 24 hours.</p>
+            
+            <form id="consultForm">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" placeholder="Jane Smith" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="jane@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" placeholder="(310) 555-0123" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Moving From</label>
+                        <input type="text" placeholder="City or ZIP">
+                    </div>
+                    <div class="form-group">
+                        <label>Moving To</label>
+                        <input type="text" placeholder="City or ZIP">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Approximate Move Date</label>
+                    <input type="text" placeholder="e.g., Early March, Flexible">
+                </div>
+                <div class="form-group">
+                    <label>Anything else we should know?</label>
+                    <textarea rows="3" placeholder="Special items, concerns, questions..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Request My Free Consultation</button>
+            </form>
+            
+            <p class="consent-text">We'll only use your information to contact you about your move. No spam, no selling your data.</p>
+        </div>
+    </div>
+
+    <script>
+        // State
+        let totalCubicFeet = 0;
+        const pricing = { low: 4.00, mid: 5.75, high: 8.00 };
+
+        // Inventory Counter
+        function updateItem(btn, delta) {
+            const item = btn.closest('.inventory-item');
+            const valueSpan = item.querySelector('.counter-value');
+            let value = Math.max(0, parseInt(valueSpan.textContent) + delta);
+            valueSpan.textContent = value;
+            item.classList.toggle('has-items', value > 0);
+            updateTotal();
+        }
+
+        function updateTotal() {
+            totalCubicFeet = 0;
+            document.querySelectorAll('.inventory-item').forEach(item => {
+                const count = parseInt(item.querySelector('.counter-value').textContent);
+                const cuft = parseInt(item.dataset.cuft);
+                totalCubicFeet += count * cuft;
+            });
+
+            const low = Math.round(totalCubicFeet * pricing.low);
+            const high = Math.round(totalCubicFeet * pricing.high);
+
+            document.getElementById('totalCuFt').textContent = totalCubicFeet;
+            document.getElementById('quoteValue').textContent = totalCubicFeet > 0 
+                ? `$${low.toLocaleString()} – $${high.toLocaleString()}`
+                : '$0 – $0';
+        }
+
+        // Room Tabs
+        document.querySelectorAll('.room-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const room = this.dataset.room;
+                document.querySelectorAll('.room-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                document.querySelectorAll('.inventory-grid').forEach(grid => {
+                    grid.style.display = grid.dataset.room === room ? 'grid' : 'none';
+                });
+            });
+        });
+
+        // Modal
+        function openModal() {
+            document.getElementById('consultModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('consultModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('consultModal').addEventListener('click', e => {
+            if (e.target.id === 'consultModal') closeModal();
+        });
+
+        // Form
+        document.getElementById('consultForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! Your personal concierge will reach out within 24 hours.');
+            closeModal();
+            this.reset();
+        });
+    </script>
+</body>
+</html>
